@@ -60,6 +60,6 @@ I had trouble adjusting the font sizes according to the screen sizes and will co
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+-Github - [@Julie-Gz](https://github.com/Julie-Gz/Front-end-mentor-stats-preview-card-solution.git)
+
+- Frontend Mentor - [@Julie-Gz](https://www.frontendmentor.io/profile/@Julie-Gz)
