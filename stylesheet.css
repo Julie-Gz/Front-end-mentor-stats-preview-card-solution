@@ -8,198 +8,134 @@
   box-sizing: border-box;
 }
 
+html{
+  font-size: 15px;
+}
+
 body {
-  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  background-color: hsl(233, 47%, 7%);
+  padding: 10em;
+  max-height: 100vh;
+  line-height: 1.6;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  display:block;
 }
 
 .container {
-  background-color: hsl(233, 47%, 7%);
-  padding: 7%;
-  line-height: 1.5;
-  max-width: 100vw;
-  height: 100vh;
-}
-
-.content {
   background-color: hsl(244, 38%, 16%);
-  display: flex;
-  border-radius: 6px;
+  height: auto;
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: calc(15px + 1vw);
   overflow: hidden;
 }
 
 .card {
-  padding: 4em;
-  font-family: "Inter", sans-serif;
-  flex-basis: 100%;
+  padding: 5em;
 }
 
-.card-title {
+.card .card-title {
   color: hsl(0, 0%, 100%);
+  font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 3rem;
-  max-width: 20ch;
+  font-size: calc(1.5rem + 1vw); /*changes the font-size per 1% of the viewport width*/
+  margin-bottom: calc(0.5em + 1vw);
+  line-height: 1;
 }
 
-.card-content {
-  color: hsla(0, 0%, 100%, 0.75);
-  font-weight: 400;
-}
-
-.crd {
-  margin-bottom: 1em;
-  max-width: 40ch;
-}
-
-.card-title span {
+.card-title span{
   color: hsl(277, 64%, 61%);
 }
 
-.nums {
-  margin-top: 5em;
+.card .card-content{
+  color: hsla(0, 0%, 100%, 0.75);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+.card-numbers{
   display: flex;
-  gap: 5em;
-  font-family: "Lexend Deca", sans-serif;
-  font-weight: 400;
+  justify-content: left;
+  align-items: center;
+  margin-top: 3em;
 }
 
-.num .content-name {
-  color: hsla(0, 0%, 100%, 0.6);
-  font-size: 0.7rem;
+.number{
+  margin-right: 4em;
 }
 
-.num .content-number {
+.card-numbers .content-number{
   color: hsl(0, 0%, 100%);
-  font-family: "Inter", sans-serif;
+  padding-bottom: 0.5em;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 1.5rem;
 }
-.card-image {
+
+.card-numbers .content-name{
+  color: hsla(0, 0%, 100%, 0.6);
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 1rem;
+}
+
+.bg-image{
+  width: 100%;
+  height: 100%;
   position: relative;
-  flex-basis: 100%;
 }
-.card-image img {
-  display: block;
+
+.bg-image .overlay{
+  position: absolute;
   height: 100%;
   width: 100%;
-}
-
-.card-image .overlay {
-  position: absolute;
-  background: hsla(277, 96%, 20%, 0.6);
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  background-color: hsla(277, 64%, 61%, 0.4);
 }
 
-/*Media queries*/
-@media screen and (min-width: 320px) {
-  .container {
-    padding: 2.5em 2em;
-  }
-  .content {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .card {
-    padding: 1.2em;
-  }
-  .card-title {
-    font-size: 1.5rem;
-  }
-  .card-content {
-    font-size: 0.8rem;
-    margin: 0 auto;
-  }
-  .crd {
-    margin-bottom: 0.5em;
-    padding: 0 0.5em;
-  }
-  .nums {
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 1.2em;
-  }
-  .num {
-    text-align: center;
-    vertical-align: middle;
-    line-height: 2;
-  }
-  .num .content-number {
-    font-size: 1rem;
-  }
-  .card-image {
-    margin-bottom: 0.5em;
-  }
-  .card-image img {
-    height: 35vh;
-  }
-}
-
-@media screen and (min-width: 460px) {
-  .container {
-    padding: 2.5em 2em;
-  }
-  .content {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .card {
-    padding: 4em;
-    font-family: "Inter", sans-serif;
-    flex-basis: 100%;
-    display: grid;
-    place-items: center;
+@media screen and (max-width: 1000px){
+  body{
+    max-width: 100%;
+    padding: 3em 1em;
+    line-height: 1.5
   }
 
-  .card-title {
-    color: hsl(0, 0%, 100%);
-    font-weight: 700;
-    font-size: 3rem;
-    max-width: 20ch;
-  }
-
-  .card-content {
-    color: hsla(0, 0%, 100%, 0.75);
-    font-weight: 400;
-  }
-
-  .crd {
-    margin-bottom: 1em;
-    max-width: 40ch;
-  }
-
-  .card-title span {
-    color: hsl(277, 64%, 61%);
-  }
-
-  .nums {
-    margin-top: 5em;
+  .container{
     display: flex;
-    gap: 5em;
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: 400;
+    flex-direction: column-reverse;
+    border-radius: 10px;
   }
 
-  .num .content-name {
-    color: hsla(0, 0%, 100%, 0.6);
-    font-size: 0.7rem;
+  .card {
+    padding: 4em 3em;
+    text-align: center;
   }
 
-  .num .content-number {
-    color: hsl(0, 0%, 100%);
-    font-family: "Inter", sans-serif;
+  .card-content{
+    font-size: 11px;
   }
-  .card-image {
-    margin-bottom: 0.5em;
+
+  .card-numbers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .card-image img {
-    height: 35vh;
-    transform: scaleX(1.2);
+
+  .number{
+    margin-right: 0;
   }
-  .card-image .overlay {
-    transform: scaleX(2);
+
+  .content-number{
+    font-size: 0.5rem;
+  }
+
+  .content-name{
+    font-size: 0.2rem;
   }
 }
